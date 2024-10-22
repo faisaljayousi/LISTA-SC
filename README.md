@@ -11,7 +11,7 @@ To run this project, you need to have Python 3 installed. You can create a virtu
 conda create -n [venv_name] python=3.12
 
 # Activate the virtual environment
-conda activate -n [venv_name]
+conda activate [venv_name]
 
 # Install dependencies
 pip install -r requirements.txt
