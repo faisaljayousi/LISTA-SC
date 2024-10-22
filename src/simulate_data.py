@@ -13,10 +13,10 @@ def simulate(
     Simulate sparse signals and their measurements.
 
     Args:
-        m: int,
-        n: int,
-        k: int,
-        N: int,
+        m (int):
+        n (int):
+        k (int):
+        N (int):
 
     Returns:
         tuple[np.ndarray, np.ndarray, np.ndarray]:
@@ -26,10 +26,8 @@ def simulate(
     """
     if w_d is None:
         # Generate dictionary
-        Psi = np.eye(m)
-        Phi = np.random.randn(n, m)
-        Phi = np.transpose(orth(np.transpose(Phi)))
-        w_d = np.dot(Phi, Psi)
+        w_d = np.random.randn(n, m)
+        w_d = np.transpose(orth(np.transpose(w_d)))
 
     # Generate sparse signals (z) and measurements (x)
     z = np.zeros((N, m))
