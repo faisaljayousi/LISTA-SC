@@ -18,7 +18,7 @@ def ista(X, W_d, alpha, L, max_iter, eps):
     Perform Iterative Shrinkage-Thresholding Algorithm (ISTA) for sparse
     recovery.
     """
-    eig, _ = np.linalg.eig(W_d.T * W_d)
+    eig, _ = np.linalg.eig(W_d.T @ W_d)
     assert L > np.max(
         eig
     ), f"`L` must be greater than than maximum eigenvalue: {np.max(eig)}"
@@ -41,7 +41,7 @@ def ista(X, W_d, alpha, L, max_iter, eps):
         Z_previous = Z_current
 
         # Calculate reconstruction error
-        recon_error = np.linalg.norm(X - W_d * Z_current, ord=2) ** 2
+        recon_error = np.linalg.norm(X - W_d @ Z_current, ord=2) ** 2
         recon_errors.append(recon_error)
 
     return Z_current, recon_errors
