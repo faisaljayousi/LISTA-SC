@@ -29,9 +29,9 @@ pip install -r requirements.txt
 ├── requirements.txt           # Required packages for the project
 └── src                        # Source code for the project
     ├── architecture.py        # Definition of the LISTA model architecture
-    ├── ista.py               # Implementation of ISTA
-    ├── simulate_data.py      # Data simulation functions
-    └── train.py              # Functions for training the LISTA model
+    ├── ista.py                # Implementation of ISTA
+    ├── generate_data.py       # Data simulation functions
+    └── train.py               # Functions for training the LISTA model
 ```
 
 ## License
